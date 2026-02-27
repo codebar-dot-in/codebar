@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codebar | Scan, Build & Deliver</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            letter-spacing: -0.02em;
+            background-color: #ffffff;
+            color: #000000;
+            overflow-x: hidden;
+        }
+        .logo-text {
+            font-weight: 700;
+            letter-spacing: -0.05em;
+        }
+        .section-border {
+            border-top: 1px solid #e5e7eb;
+        }
+
+        /* Typewriter Cursor (Maintained for Hero only) */
+        .cursor {
+            display: inline-block;
+            width: 3px;
+            background-color: #3b82f6;
+            margin-left: 4px;
+            animation: blink 1s infinite;
+            vertical-align: middle;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Intro Logo Animation Styles */
+        #intro-overlay {
+            position: fixed;
+            inset: 0;
+            background: white;
+            z-index: 40;
+            transition: opacity 0.8s cubic-bezier(0.87, 0, 0.13, 1);
+        }
+
+        #animating-logo {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 50;
+            transition: all 0.8s cubic-bezier(0.87, 0, 0.13, 1);
+            transform-origin: center center;
+            pointer-events: none;
+        }
+
+        /* State after logo is moved to nav */
+        /* Mobile Position */
+        #animating-logo.logo-moved {
+            position: absolute !important;
+            top: 32px !important; /* Adjusted for mobile py-8 */
+            left: 24px !important;
+            bottom: auto !important;
+            right: auto !important;
+            justify-content: flex-start;
+            align-items: flex-start;
+            transform: scale(0.35) translate(-50%, -50%);
+            width: auto;
+            height: auto;
+            pointer-events: auto;
+        }
+
+        @media (min-width: 768px) {
+             #animating-logo.logo-moved {
+                 /* Adjust top alignment for desktop nav spacing (py-10 is ~40px top) */
+                top: 25px !important; 
+             }
+        }
+
+        @media (min-width: 1152px) {
+            #animating-logo.logo-moved {
+                /* Align with max-w-6xl container + px-6 padding */
+                /* 50% (center) - 576px (half container) + 24px (padding) */
+                left: calc(45% - 576px + 24px) !important;
+            }
+        }
+
+        #main-content {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        /* Mobile Menu Transitions */
+        #mobile-menu {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- The Animated Logo -->
+    <div id="animating-logo" class="logo-text text-6xl md:text-8xl">
+        <span id="logo-typewriter"></span>
+    </div>
+
+    <!-- Background white overlay during intro -->
+    <div id="intro-overlay"></div>
+
+    <div id="main-content">
+        <!-- Nav -->
+        <nav class="max-w-6xl mx-auto px-6 py-8 md:py-10 flex justify-between items-center relative z-50">
+            <div class="w-32 h-8"></div> <!-- Spacer for the flying logo -->
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-12 text-sm font-medium text-gray-500">
+                <a href="#story" class="hover:text-black transition">Story</a>
+                <a href="#services" class="hover:text-black transition">Services</a>
+                <a href="#about" class="hover:text-black transition">Values</a>
+                <a href="#contact" class="text-black font-bold underline underline-offset-4">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-black focus:outline-none z-50">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center opacity-0 pointer-events-none">
+            <button id="mobile-menu-close" class="absolute top-8 right-6 text-black focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <nav class="flex flex-col space-y-8 text-center">
+                <a href="#story" class="text-3xl font-bold mobile-link">Story</a>
+                <a href="#services" class="text-3xl font-bold mobile-link">Services</a>
+                <a href="#about" class="text-3xl font-bold mobile-link">Values</a>
+                <a href="#contact" class="text-3xl font-bold mobile-link">Contact</a>
+            </nav>
+        </div>
+
+        <!-- Hero -->
+        <main class="max-w-6xl mx-auto px-6 pb-24 md:pt-20 md:pb-40">
+            <h1 id="hero-typewriter" class="text-5xl md:text-8xl font-bold tracking-tighter leading-tight md:leading-none mb-8 md:mb-12 min-h-[3.5em] md:min-h-[2em]"></h1>
+            <p class="text-xl md:text-3xl text-gray-400 max-w-3xl leading-snug opacity-0 transition-opacity duration-1000 ease-in-out" id="hero-subtext">
+                Codebar is a creative technology studio. We engineer digital products and craft visual experiences that matter.
+            </p>
+        </main>
+
+        <!-- Our Story Section -->
+        <section id="story" class="bg-gray-900 text-white py-16 md:py-24 section-border">
+            <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-blue-400 block mb-6">Our Story</span>
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">Born from a collision of logic and creativity.</h2>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-6">
+                        Codebar started in Chennai with a simple observation: most agencies were either good at writing code or good at making things look pretty. Rarely both.
+                    </p>
+                    <p class="text-gray-400 text-lg leading-relaxed">
+                        We founded Codebar to bridge that gap. We are a team of engineers who love design, and artists who understand algorithms. Today, we partner with ambitious companies to build digital ecosystems where function meets form, and where every line of code serves a larger narrative.
+                    </p>
+                </div>
+                <div class="relative mt-8 md:mt-0">
+                    <div class="absolute inset-0 bg-blue-600 rounded-2xl transform rotate-3 opacity-20"></div>
+                    <div class="aspect-w-4 aspect-h-3 overflow-hidden rounded-2xl bg-gray-800 relative z-10">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1000" alt="Our Team" class="object-cover w-full h-full grayscale hover:grayscale-0 transition duration-700">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Detailed Section -->
+        <section id="services" class="section-border">
+            <div class="max-w-6xl mx-auto px-6 py-16 md:py-24">
+                <div class="mb-12 md:mb-16">
+                    <span class="text-xs font-bold uppercase tracking-widest text-blue-600 block mb-6">Our Expertise</span>
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Comprehensive Digital Solutions</h2>
+                </div>
+
+                <!-- Service 01: Engineering -->
+                <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center mb-24 md:mb-32">
+                    <div class="order-2 md:order-1">
+                        <div class="aspect-w-16 aspect-h-9 overflow-hidden rounded-xl bg-gray-100">
+                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1000" alt="Software Engineering" class="object-cover w-full h-full hover:scale-105 transition duration-700">
+                        </div>
+                    </div>
+                    <div class="order-1 md:order-2">
+                        <span class="text-blue-600 font-bold text-sm mb-2 block">01. Engineering</span>
+                        <h3 class="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Tech & Platforms</h3>
+                        <p class="text-gray-500 leading-relaxed mb-6 md:mb-8 text-base md:text-lg">
+                            We build the engines that power modern business. Our engineering team specializes in creating robust, scalable software architectures that grow with you. From MVP to enterprise-grade cloud solutions, we ensure code quality and security at every step.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="border-l-2 border-gray-200 pl-4">
+                                <h4 class="font-bold text-sm">App Development</h4>
+                                <p class="text-sm text-gray-400 mt-1">Android, React Native</p>
+                            </div>
+                            <div class="border-l-2 border-gray-200 pl-4">
+                                <h4 class="font-bold text-sm">Cloud Infrastructure</h4>
+                                <p class="text-sm text-gray-400 mt-1">Amazon AWS, Microsoft Azure, Google Cloud</p>
+                            </div>
+                            <div class="border-l-2 border-gray-200 pl-4">
+                                <h4 class="font-bold text-sm">Web Platforms</h4>
+                                <p class="text-sm text-gray-400 mt-1">Angular, React, Next.js, Node</p>
+                            </div>
+                            <div class="border-l-2 border-gray-200 pl-4">
+                                <h4 class="font-bold text-sm">AI Integration</h4>
+                                <p class="text-sm text-gray-400 mt-1">LLMs, Automation Workflows</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 02: Creative Studio -->
+                <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center mb-24 md:mb-32">
+                    <div class="order-1">
+                        <span class="text-blue-600 font-bold text-sm mb-2 block">02. Creative Studio</span>
+                        <h3 class="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Design & Media</h3>
+                        <p class="text-gray-500 leading-relaxed mb-6 md:mb-8 text-base md:text-lg">
+                            Attention is the new currency. Our creative studio bridges the gap between art and algorithm. We produce high-impact visuals designed to stop the scroll, helping your brand tell its story in a way that resonates with the modern digital audience.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="border-l-2 border-gray-200 pl-4">
+                                <h4 class="font-bold text-sm">Reels & Video</h4>
+                                <p class="text-sm text-gray-400 mt-1">Viral cuts, Storytelling</p>
+                            </div>
+                            <div class="border-l-2 border-gray-200 pl-4">
+                                <h4 class="font-bold text-sm">Brand Identity</h4>
+                                <p class="text-sm text-gray-400 mt-1">Logos, Typography, Voice</p>
+                            </div>
+                            <div class="border-l-2 border-gray-200 pl-4">
+                                <h4 class="font-bold text-sm">Graphic Design</h4>
+                                <p class="text-sm text-gray-400 mt-1">Posters, Social Assets</p>
+                            </div>
+                            <div class="border-l-2 border-gray-200 pl-4">
+                                <h4 class="font-bold text-sm">UI/UX Design</h4>
+                                <p class="text-sm text-gray-400 mt-1">Web & Mobile Interfaces</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-2">
+                        <div class="aspect-w-16 aspect-h-9 overflow-hidden rounded-xl bg-gray-100">
+                            <!-- Updated Image Source -->
+                            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=1000" alt="Creative Studio" class="object-cover w-full h-full hover:scale-105 transition duration-700">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 03: Academy -->
+                <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                    <div class="order-2 md:order-1">
+                        <div class="aspect-w-16 aspect-h-9 overflow-hidden rounded-xl bg-gray-100">
+                            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=1000" alt="Codebar Academy" class="object-cover w-full h-full hover:scale-105 transition duration-700">
+                        </div>
+                    </div>
+                    <div class="order-1 md:order-2">
+                        <span class="text-blue-600 font-bold text-sm mb-2 block">03. Academy</span>
+                        <h3 class="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Growth & Workshops</h3>
+                        <p class="text-gray-500 leading-relaxed mb-6 md:mb-8 text-base md:text-lg">
+                            We believe in empowering teams. Through Codebar Academy, we share our expertise in engineering and design. Our workshops are hands-on, intensive, and designed to bridge the gap between theoretical knowledge and industry application.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="border-l-2 border-gray-200 pl-4">
+                                <h4 class="font-bold text-sm">Corporate Training</h4>
+                                <p class="text-sm text-gray-400 mt-1">Upskilling Teams</p>
+                            </div>
+                            <div class="border-l-2 border-gray-200 pl-4">
+                                <h4 class="font-bold text-sm">Tech Bootcamps</h4>
+                                <p class="text-sm text-gray-400 mt-1">Full-stack, Data Science</p>
+                            </div>
+                            <div class="border-l-2 border-gray-200 pl-4">
+                                <h4 class="font-bold text-sm">Digital Strategy</h4>
+                                <p class="text-sm text-gray-400 mt-1">Consulting & Planning</p>
+                            </div>
+                            <div class="border-l-2 border-gray-200 pl-4">
+                                <h4 class="font-bold text-sm">Mentorship</h4>
+                                <p class="text-sm text-gray-400 mt-1">1-on-1 Guidance</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Values / Approach -->
+        <section id="about" class="bg-gray-50 border-t border-gray-200">
+            <div class="max-w-6xl mx-auto px-6 py-16 md:py-24">
+                <div class="mb-12 md:mb-16">
+                    <span class="text-xs font-bold uppercase tracking-widest text-blue-600 block mb-6">Our DNA</span>
+                    <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-6 md:mb-8">Scan. Build. Deliver.</h2>
+                    <p class="text-lg md:text-xl text-gray-500 max-w-2xl leading-relaxed">
+                        Our methodology is simple but rigorous. We don't just jump into code; we follow a structured path to ensure every digital product we create drives real business outcomes.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8 md:gap-8">
+                    <!-- Scan -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden group hover:shadow-md transition-shadow">
+                        <div class="h-48 md:h-56 overflow-hidden relative">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition z-10"></div>
+                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-700" alt="Scan Phase">
+                        </div>
+                        <div class="p-6 md:p-8">
+                            <h4 class="text-2xl font-bold mb-3">Scan</h4>
+                            <p class="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-4">Discovery & Strategy</p>
+                            <p class="text-gray-500 leading-relaxed">
+                                We start by understanding the 'Why'. We scan your market, analyze your requirements, and map out a strategic roadmap. This ensures that what we build is perfectly aligned with your business goals.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Build -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden group hover:shadow-md transition-shadow">
+                        <div class="h-48 md:h-56 overflow-hidden relative">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition z-10"></div>
+                            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-700" alt="Build Phase">
+                        </div>
+                        <div class="p-6 md:p-8">
+                            <h4 class="text-2xl font-bold mb-3">Build</h4>
+                            <p class="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-4">Engineering & Design</p>
+                            <p class="text-gray-500 leading-relaxed">
+                                This is our core. We combine robust engineering with creative design to build scalable solutions. From clean code architectures to engaging visual assets, we craft the product with precision.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Deliver -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden group hover:shadow-md transition-shadow">
+                        <div class="h-48 md:h-56 overflow-hidden relative">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition z-10"></div>
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-700" alt="Deliver Phase">
+                        </div>
+                        <div class="p-6 md:p-8">
+                            <h4 class="text-2xl font-bold mb-3">Deliver</h4>
+                            <p class="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-4">Launch & Growth</p>
+                            <p class="text-gray-500 leading-relaxed">
+                                Delivery is more than just deployment. We ensure a seamless launch, referenceable quality, and continuous support. We help you grow by delivering a product that performs flawlessly in the real world.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="bg-black text-white py-16 md:py-24">
+            <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 md:gap-16">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-blue-500 block mb-6">Start a Project</span>
+                    <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-6 md:mb-8">Let's build something great together.</h2>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-8">
+                        Ready to transform your digital presence? Reach out to us for a consultation, quote, or just to say hello.
+                    </p>
+                    <div class="space-x-6">
+                        <a href="#" class="text-white hover:text-blue-400 transition underline underline-offset-4">Twitter</a>
+                        <a href="#" class="text-white hover:text-blue-400 transition underline underline-offset-4">LinkedIn</a>
+                        <a href="#" class="text-white hover:text-blue-400 transition underline underline-offset-4">Instagram</a>
+                    </div>
+                </div>
+                
+                <div class="space-y-8 md:space-y-10 md:pl-12 md:border-l border-gray-800">
+                    <div>
+                        <h4 class="text-sm font-bold text-gray-500 uppercase tracking-wide mb-2">Email</h4>
+                        <a href="mailto:support@codebar.in" class="text-xl md:text-2xl font-medium hover:text-blue-400 transition break-all">support@codebar.in</a>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-sm font-bold text-gray-500 uppercase tracking-wide mb-2">Phone</h4>
+                        <div class="flex flex-col space-y-2">
+                            <a href="tel:+916374492504" class="text-xl md:text-2xl font-medium hover:text-blue-400 transition">+91 63744 92504</a>
+                            <a href="tel:+919940195863" class="text-xl md:text-2xl font-medium hover:text-blue-400 transition">+91 99401 95863</a>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-sm font-bold text-gray-500 uppercase tracking-wide mb-2">Studio</h4>
+                        <p class="text-lg md:text-xl font-medium leading-relaxed">
+                            Paruthipattu,<br>
+                            Chennai, India
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-black text-white border-t border-gray-900">
+            <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 text-center md:text-left">
+                <div class="mb-4 md:mb-0">&copy; 2026 Codebar. All rights reserved.</div>
+                <div class="flex items-center justify-center space-x-2">
+                   <span>Designed & Built in Chennai</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Updated text to use '≡' for the 'E'
+        const logoText = "cod≡bar";
+        const heroText = "We build apps.\nWe grow brands.";
+        
+        const logoTypewriter = document.getElementById('logo-typewriter');
+        const heroElement = document.getElementById('hero-typewriter');
+        const subtextElement = document.getElementById('hero-subtext');
+        const introOverlay = document.getElementById('intro-overlay');
+        const animatingLogo = document.getElementById('animating-logo');
+        const mainContent = document.getElementById('main-content');
+
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const closeBtn = document.getElementById('mobile-menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            const isClosed = mobileMenu.classList.contains('pointer-events-none');
+            if (isClosed) {
+                mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+            } else {
+                mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+            }
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        closeBtn.addEventListener('click', toggleMenu);
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
+
+        function typeLogo(index = 0) {
+            if (index < logoText.length) {
+                let char = logoText[index];
+                if (index >= 4) { // "bar" section (indices 4, 5, 6)
+                    logoTypewriter.innerHTML += `<span class="text-blue-600">${char}</span>`;
+                } else {
+                    logoTypewriter.innerHTML += char;
+                }
+                setTimeout(() => typeLogo(index + 1), 100);
+            } else {
+                setTimeout(moveLogoToNav, 1000);
+            }
+        }
+
+        function moveLogoToNav() {
+            // Move logo to fixed top-left position
+            animatingLogo.classList.add('logo-moved');
+            
+            // Fade out the white intro overlay
+            introOverlay.style.opacity = '0';
+            
+            // Reveal main content
+            mainContent.style.opacity = '1';
+
+            setTimeout(() => {
+                introOverlay.style.display = 'none';
+                startHeroTypewriter();
+            }, 800);
+        }
+
+        function startHeroTypewriter(index = 0) {
+            if (index < heroText.length) {
+                const char = heroText.charAt(index);
+                let currentText = heroText.substring(0, index + 1).replace(/\n/g, '<br>');
+                
+                // Add the cursor span
+                heroElement.innerHTML = currentText + '<span class="cursor h-12 md:h-20"></span>';
+                
+                setTimeout(() => startHeroTypewriter(index + 1), 60);
+            } else {
+                // Finished typing
+                heroElement.innerHTML = heroText.replace(/\n/g, '<br>') + '<span class="cursor h-12 md:h-20"></span>';
+                subtextElement.classList.remove('opacity-0');
+            }
+        }
+
+        window.onload = () => {
+            setTimeout(typeLogo, 500);
+        };
+    </script>
+
+</body>
+</html>
+
+
+
+

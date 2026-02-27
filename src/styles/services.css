@@ -1,0 +1,402 @@
+/* ========================================
+   SERVICES — Apple Siri-Style Visual Showcases
+   Each service is a full-bleed sticky section
+   with scroll-linked animations
+   ======================================== */
+
+/* Service showcase wrapper — tall container for sticky scroll */
+.service-showcase {
+    position: relative;
+    min-height: 120vh;
+    border-top: 1px solid var(--border-light);
+    overflow: hidden;
+}
+
+.service-showcase:nth-child(even) {
+    background: var(--bg-secondary);
+}
+
+.service-showcase:nth-child(odd) {
+    background: var(--bg-primary);
+}
+
+/* Sticky content that stays in viewport while you scroll */
+.service-sticky {
+    position: sticky;
+    top: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.service-layout {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 80px var(--container-padding);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .service-layout {
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+    }
+}
+
+/* Alternate layout direction */
+.service-layout.reverse .service-text-col {
+    order: 1;
+}
+
+.service-layout.reverse .service-image-col {
+    order: 2;
+}
+
+@media (min-width: 768px) {
+    .service-layout.reverse .service-text-col {
+        order: 2;
+    }
+
+    .service-layout.reverse .service-image-col {
+        order: 1;
+    }
+}
+
+/* Service text column */
+.service-text-col {
+    z-index: 2;
+}
+
+.service-showcase-num {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.service-showcase-heading {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+    margin-bottom: 24px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.service-showcase-desc {
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 24px;
+}
+
+.service-tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.service-tech-tags span {
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 100px;
+    border: 1px solid var(--border-color);
+    color: var(--text-tertiary);
+    background: var(--bg-primary);
+    letter-spacing: 0.02em;
+}
+
+/* Service image column */
+.service-image-col {
+    position: relative;
+    z-index: 1;
+}
+
+.service-device-img {
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.12);
+    transition: transform 0.8s var(--ease-out-expo), opacity 0.8s var(--ease-out-expo);
+}
+
+/* Scroll-driven animation states */
+.service-anim {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+}
+
+.service-anim.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger delays for children */
+.service-anim-delay-1 {
+    transition-delay: 0.1s;
+}
+
+.service-anim-delay-2 {
+    transition-delay: 0.2s;
+}
+
+.service-anim-delay-3 {
+    transition-delay: 0.35s;
+}
+
+.service-anim-delay-4 {
+    transition-delay: 0.5s;
+}
+
+/* Image specific animation — slides from right */
+.service-img-anim {
+    opacity: 0;
+    transform: translateX(80px) scale(0.95);
+    transition: opacity 1s var(--ease-out-expo), transform 1s var(--ease-out-expo);
+    transition-delay: 0.15s;
+}
+
+.service-img-anim.animate-in {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+}
+
+/* Reverse image slides from left */
+.service-layout.reverse .service-img-anim {
+    transform: translateX(-80px) scale(0.95);
+}
+
+.service-layout.reverse .service-img-anim.animate-in {
+    transform: translateX(0) scale(1);
+}
+
+/* Gradient palettes for each service heading */
+.svc-gradient-web {
+    background-image: linear-gradient(135deg, #1d1d1f, #5e5ce6, #2997ff, #64d2ff);
+}
+
+.svc-gradient-mobile {
+    background-image: linear-gradient(135deg, #ff375f, #bf5af2, #5e5ce6);
+}
+
+.svc-gradient-ecom {
+    background-image: linear-gradient(135deg, #30d158, #2997ff, #5e5ce6);
+}
+
+.svc-gradient-marketing {
+    background-image: linear-gradient(90deg, #ff375f, #ff6723, #FFB800);
+}
+
+.svc-gradient-branding {
+    background-image: linear-gradient(135deg, #bf5af2, #ff375f, #ff6723);
+}
+
+/* === Compact grid for remaining services === */
+.services-remaining {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-light);
+    padding: var(--section-padding) 0;
+}
+
+.services-mini-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 40px;
+    perspective: 800px;
+}
+
+@media (min-width: 480px) {
+    .services-mini-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    .services-mini-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .services-mini-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+.mini-service {
+    padding: 32px 24px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.06),
+        0 2px 8px rgba(0, 0, 0, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    text-align: center;
+    transition:
+        transform 0.5s cubic-bezier(0.23, 1, 0.32, 1),
+        box-shadow 0.5s cubic-bezier(0.23, 1, 0.32, 1),
+        border-color 0.5s ease;
+    transform-style: preserve-3d;
+    will-change: transform;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+    /* Staggered float animation */
+    animation: bubbleFloat 6s ease-in-out infinite;
+}
+
+.mini-service:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.mini-service:nth-child(2) {
+    animation-delay: -1.2s;
+}
+
+.mini-service:nth-child(3) {
+    animation-delay: -2.4s;
+}
+
+.mini-service:nth-child(4) {
+    animation-delay: -3.6s;
+}
+
+.mini-service:nth-child(5) {
+    animation-delay: -4.8s;
+}
+
+/* Subtle shimmer overlay */
+.mini-service::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 30%,
+            rgba(255, 255, 255, 0.3) 0%,
+            transparent 60%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.mini-service:hover::before {
+    opacity: 1;
+}
+
+/* Hover — lift + glow + 3D tilt */
+.mini-service:hover {
+    transform: translateY(-12px) scale(1.03) rotateX(4deg);
+    box-shadow:
+        0 20px 60px rgba(41, 151, 255, 0.12),
+        0 8px 24px rgba(191, 90, 242, 0.08),
+        0 4px 12px rgba(0, 0, 0, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    border-color: rgba(41, 151, 255, 0.2);
+}
+
+/* Each card gets a unique hover shadow color */
+.mini-service:nth-child(1):hover {
+    box-shadow:
+        0 20px 60px rgba(41, 151, 255, 0.15),
+        0 8px 24px rgba(41, 151, 255, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.mini-service:nth-child(2):hover {
+    box-shadow:
+        0 20px 60px rgba(255, 103, 35, 0.15),
+        0 8px 24px rgba(255, 103, 35, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.mini-service:nth-child(3):hover {
+    box-shadow:
+        0 20px 60px rgba(191, 90, 242, 0.15),
+        0 8px 24px rgba(191, 90, 242, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.mini-service:nth-child(4):hover {
+    box-shadow:
+        0 20px 60px rgba(48, 209, 88, 0.15),
+        0 8px 24px rgba(48, 209, 88, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.mini-service:nth-child(5):hover {
+    box-shadow:
+        0 20px 60px rgba(255, 55, 95, 0.15),
+        0 8px 24px rgba(255, 55, 95, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+@keyframes bubbleFloat {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    25% {
+        transform: translateY(-8px) rotate(0.5deg);
+    }
+
+    50% {
+        transform: translateY(-4px) rotate(-0.3deg);
+    }
+
+    75% {
+        transform: translateY(-10px) rotate(0.2deg);
+    }
+}
+
+.mini-service-icon {
+    font-size: 2.2rem;
+    margin-bottom: 14px;
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.mini-service:hover .mini-service-icon {
+    transform: scale(1.2) translateY(-4px);
+}
+
+.mini-service h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+}
+
+.mini-service:hover h4 {
+    color: var(--accent-blue);
+}
+
+.mini-service p {
+    font-size: 0.8rem;
+    color: var(--text-tertiary);
+    line-height: 1.5;
+}

@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codebar | Scan, Build & Deliver — Creative Technology Studio in Chennai</title>
+    <meta name="description"
+        content="Codebar is a creative technology studio in Chennai offering web development, app development, digital marketing, SEO, branding, and AI-powered solutions to grow your business.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Intro Logo Animation Overlay -->
+    <div id="intro-overlay"></div>
+    <div id="animating-logo">
+        <span id="logo-typewriter"></span>
+    </div>
+
+    <!-- Main Content (hidden until intro completes) -->
+    <div id="main-content">
+
+        <!-- Navigation -->
+        <nav id="main-nav">
+            <div class="nav-inner">
+                <a href="#" class="nav-logo">cod<span class="accent">≡</span>bar</a>
+                <div class="nav-links">
+                    <a href="#story">Story</a>
+                    <a href="#services">Services</a>
+                    <a href="#why-us">Why Us</a>
+                    <a href="#values">Values</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="#contact" class="nav-cta">Contact</a>
+                </div>
+                <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu">
+            <button id="mobile-menu-close" class="mobile-menu-close" aria-label="Close menu">&times;</button>
+            <nav class="mobile-menu-nav">
+                <a href="#story" class="mobile-link">Story</a>
+                <a href="#services" class="mobile-link">Services</a>
+                <a href="#why-us" class="mobile-link">Why Us</a>
+                <a href="#values" class="mobile-link">Values</a>
+                <a href="#faq" class="mobile-link">FAQ</a>
+                <a href="#contact" class="mobile-link">Contact</a>
+            </nav>
+        </div>
+
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <h1 id="hero-typewriter" class="hero-heading"></h1>
+                <p id="hero-subtext" class="hero-sub">
+                    Codebar is a creative technology studio. We engineer digital products, craft visual experiences, and
+                    grow brands that matter.
+                </p>
+                <div class="hero-tags">
+                    <span>Web Development</span>
+                    <span>App Development</span>
+                    <span>Digital Marketing</span>
+                    <span>SEO</span>
+                    <span>Branding</span>
+                    <span>AI Solutions</span>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span>Scroll</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- Stats Counter -->
+        <section id="stats" class="stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item reveal">
+                        <span class="stat-number" data-target="50">0</span><span class="stat-suffix">+</span>
+                        <span class="stat-label">Happy Clients</span>
+                    </div>
+                    <div class="stat-item reveal">
+                        <span class="stat-number" data-target="100">0</span><span class="stat-suffix">+</span>
+                        <span class="stat-label">Projects Delivered</span>
+                    </div>
+                    <div class="stat-item reveal">
+                        <span class="stat-number" data-target="3">0</span><span class="stat-suffix">+</span>
+                        <span class="stat-label">Years of Experience</span>
+                    </div>
+                    <div class="stat-item reveal">
+                        <span class="stat-number" data-target="85">0</span><span class="stat-suffix">%</span>
+                        <span class="stat-label">Client Retention</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Story Section -->
+        <section id="story" class="section section-story">
+            <div class="container grid-2col">
+                <div class="reveal-left">
+                    <span class="section-tag">Our Story</span>
+                    <h2 class="section-heading-xl gradient-purple-blue">Born from a collision of logic and creativity.
+                    </h2>
+                    <p class="section-text">
+                        Codebar started in Chennai with a simple observation: most agencies were either good at writing
+                        code or good at making things look pretty. Rarely both.
+                    </p>
+                    <p class="section-text">
+                        We founded Codebar to bridge that gap. We are a team of engineers who love design, and artists
+                        who understand algorithms. Today, we partner with ambitious companies to build digital
+                        ecosystems where function meets form, and where every line of code serves a larger narrative.
+                    </p>
+                </div>
+                <div class="reveal-right story-image-wrapper">
+                    <div class="glow-card-image">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1000"
+                            alt="Our Team" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services — Visual Showcases -->
+        <section id="services">
+            <!-- Section Header -->
+            <div class="section"
+                style="padding-bottom: 0; background: var(--bg-primary); border-top: 1px solid var(--border-light);">
+                <div class="container">
+                    <div class="section-header reveal">
+                        <span class="section-tag">Our Expertise</span>
+                        <h2 class="section-heading-xl gradient-rainbow">Comprehensive Digital Solutions</h2>
+                        <p class="section-text section-intro">At Codebar, we offer a full spectrum of digital services.
+                            From
+                            code to creative, from strategy to delivery — we handle it all in-house.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 01: Web Development -->
+            <div class="service-showcase">
+                <div class="service-sticky">
+                    <div class="service-layout">
+                        <div class="service-text-col">
+                            <span class="service-showcase-num service-anim gradient-text">01 — Web Development</span>
+                            <h3 class="service-showcase-heading svc-gradient-web service-anim service-anim-delay-1">
+                                Websites that captivate.</h3>
+                            <p class="service-showcase-desc service-anim service-anim-delay-2">
+                                Custom responsive websites, SPAs, and progressive web apps. We build on React, Next.js,
+                                Angular, Node.js — choosing the right tech for your vision. Every pixel is crafted for
+                                performance and elegance.
+                            </p>
+                            <div class="service-tech-tags service-anim service-anim-delay-3">
+                                <span>React</span>
+                                <span>Next.js</span>
+                                <span>Angular</span>
+                                <span>Node.js</span>
+                                <span>TypeScript</span>
+                            </div>
+                        </div>
+                        <div class="service-image-col">
+                            <img src="/images/services/web-dev.png" alt="MacBook showing a modern website"
+                                class="service-device-img service-img-anim" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 02: Mobile App Development -->
+            <div class="service-showcase">
+                <div class="service-sticky">
+                    <div class="service-layout reverse">
+                        <div class="service-text-col">
+                            <span class="service-showcase-num service-anim gradient-text">02 — Mobile Apps</span>
+                            <h3 class="service-showcase-heading svc-gradient-mobile service-anim service-anim-delay-1">
+                                Apps people love.</h3>
+                            <p class="service-showcase-desc service-anim service-anim-delay-2">
+                                Native and cross-platform apps for Android & iOS. Built with React Native and Flutter
+                                — performant apps that scale beautifully. From concept to App Store, we handle
+                                everything.
+                            </p>
+                            <div class="service-tech-tags service-anim service-anim-delay-3">
+                                <span>React Native</span>
+                                <span>Flutter</span>
+                                <span>Swift</span>
+                                <span>Kotlin</span>
+                                <span>Firebase</span>
+                            </div>
+                        </div>
+                        <div class="service-image-col">
+                            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=800"
+                                alt="iPhone showing mobile apps" class="service-device-img service-img-anim"
+                                loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 03: E-commerce Solutions -->
+            <div class="service-showcase">
+                <div class="service-sticky">
+                    <div class="service-layout">
+                        <div class="service-text-col">
+                            <span class="service-showcase-num service-anim gradient-text">03 — E-commerce</span>
+                            <h3 class="service-showcase-heading svc-gradient-ecom service-anim service-anim-delay-1">
+                                Stores that sell.</h3>
+                            <p class="service-showcase-desc service-anim service-anim-delay-2">
+                                End-to-end e-commerce platforms. Shopify, WooCommerce, and custom builds designed
+                                to drive sales and maximize conversions. Beautiful product experiences
+                                that turn visitors into customers.
+                            </p>
+                            <div class="service-tech-tags service-anim service-anim-delay-3">
+                                <span>Shopify</span>
+                                <span>WooCommerce</span>
+                                <span>Stripe</span>
+                                <span>Custom Builds</span>
+                            </div>
+                        </div>
+                        <div class="service-image-col">
+                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800"
+                                alt="E-commerce shopping experience" class="service-device-img service-img-anim"
+                                loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 04: Digital Marketing & SEO -->
+            <div class="service-showcase">
+                <div class="service-sticky">
+                    <div class="service-layout reverse">
+                        <div class="service-text-col">
+                            <span class="service-showcase-num service-anim gradient-text">04 — Digital Marketing</span>
+                            <h3
+                                class="service-showcase-heading svc-gradient-marketing service-anim service-anim-delay-1">
+                                Growth, amplified.</h3>
+                            <p class="service-showcase-desc service-anim service-anim-delay-2">
+                                Data-driven campaigns across all digital channels. SEO, PPC, social media — strategy,
+                                execution, and optimization powered by AI to boost growth and maximize ROI.
+                            </p>
+                            <div class="service-tech-tags service-anim service-anim-delay-3">
+                                <span>Google Ads</span>
+                                <span>Meta Ads</span>
+                                <span>SEO</span>
+                                <span>Analytics</span>
+                                <span>AI Bidding</span>
+                            </div>
+                        </div>
+                        <div class="service-image-col">
+                            <img src="/images/services/marketing.png" alt="Marketing analytics dashboard"
+                                class="service-device-img service-img-anim" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 05: Branding -->
+            <div class="service-showcase">
+                <div class="service-sticky">
+                    <div class="service-layout">
+                        <div class="service-text-col">
+                            <span class="service-showcase-num service-anim gradient-text">05 — Strategic Branding</span>
+                            <h3
+                                class="service-showcase-heading svc-gradient-branding service-anim service-anim-delay-1">
+                                Brands that resonate.</h3>
+                            <p class="service-showcase-desc service-anim service-anim-delay-2">
+                                Brand identity, logo design, typography, and voice. We define who you are and create
+                                visual systems that captivate your audience across every touchpoint.
+                            </p>
+                            <div class="service-tech-tags service-anim service-anim-delay-3">
+                                <span>Logo Design</span>
+                                <span>Brand Identity</span>
+                                <span>Typography</span>
+                                <span>Brand Voice</span>
+                            </div>
+                        </div>
+                        <div class="service-image-col">
+                            <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&q=80&w=800"
+                                alt="Branding and identity design" class="service-device-img service-img-anim"
+                                loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other Services — Compact Grid -->
+            <div class="services-remaining">
+                <div class="container">
+                    <div class="section-header reveal">
+                        <span class="section-tag">And More</span>
+                        <h2 class="section-heading">Everything else you need.</h2>
+                    </div>
+                    <div class="services-mini-grid">
+                        <div class="mini-service reveal">
+                            <div class="mini-service-icon">💬</div>
+                            <h4>Social Media</h4>
+                            <p>Strategy, content & community across all platforms.</p>
+                        </div>
+                        <div class="mini-service reveal">
+                            <div class="mini-service-icon">🎯</div>
+                            <h4>PPC Advertising</h4>
+                            <p>AI-powered Google & Meta ad campaigns.</p>
+                        </div>
+                        <div class="mini-service reveal">
+                            <div class="mini-service-icon">🧲</div>
+                            <h4>Lead Generation</h4>
+                            <p>Funnels, landing pages & targeted campaigns.</p>
+                        </div>
+                        <div class="mini-service reveal">
+                            <div class="mini-service-icon">📝</div>
+                            <h4>Content & CMS</h4>
+                            <p>WordPress, headless CMS & content strategy.</p>
+                        </div>
+                        <div class="mini-service reveal">
+                            <div class="mini-service-icon">🔍</div>
+                            <h4>SEO Management</h4>
+                            <p>Technical SEO, local SEO & organic growth.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Codebar Section -->
+        <section id="why-us" class="section section-why">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">Why Codebar</span>
+                    <h2 class="section-heading-xl gradient-blue-cyan">How we're different.</h2>
+                </div>
+                <div class="why-grid">
+                    <div class="why-card glass-card reveal-left">
+                        <div class="why-icon">🤖</div>
+                        <h3>AI-Powered Approach</h3>
+                        <p>We integrate AI into our development and marketing workflows — from smart campaign
+                            optimization to intelligent automation — giving you a competitive edge.</p>
+                    </div>
+                    <div class="why-card glass-card reveal">
+                        <div class="why-icon">🔗</div>
+                        <h3>End-to-End Partner</h3>
+                        <p>From code to creative, strategy to deployment — everything is handled in-house. One team, one
+                            vision, zero fragmentation.</p>
+                    </div>
+                    <div class="why-card glass-card reveal-right">
+                        <div class="why-icon">📊</div>
+                        <h3>Results-Driven</h3>
+                        <p>Every project is measured by real business outcomes — revenue, leads, growth — not vanity
+                            metrics. Your success is our KPI.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI & Technology Section -->
+        <section id="ai-tech" class="section section-ai">
+            <div class="container grid-2col">
+                <div class="reveal-left">
+                    <span class="section-tag">AI & Technology</span>
+                    <h2 class="section-heading-xl gradient-white-glow">Intelligence built into everything we do.</h2>
+                    <p class="section-text">
+                        AI is not just a buzzword for us — it's embedded in our workflow. We use advanced AI and data
+                        analytics to process insights, optimize campaigns, and build smarter software.
+                    </p>
+                    <div class="ai-features">
+                        <div class="ai-feature">
+                            <span class="ai-dot"></span>
+                            <span>AI-integrated development workflows</span>
+                        </div>
+                        <div class="ai-feature">
+                            <span class="ai-dot"></span>
+                            <span>Smart campaign optimization & bidding</span>
+                        </div>
+                        <div class="ai-feature">
+                            <span class="ai-dot"></span>
+                            <span>Data-driven decision making</span>
+                        </div>
+                        <div class="ai-feature">
+                            <span class="ai-dot"></span>
+                            <span>Automation & intelligent tooling</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal-right ai-visual">
+                    <div class="ai-orb">
+                        <div class="ai-orb-inner"></div>
+                        <div class="ai-orb-ring"></div>
+                        <div class="ai-orb-ring ai-orb-ring-2"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values / Approach -->
+        <section id="values" class="section section-values">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">Our DNA</span>
+                    <h2 class="section-heading-xl gradient-pink-orange">Scan. Build. Deliver.</h2>
+                    <p class="section-text section-intro">Our methodology is simple but rigorous. We follow a structured
+                        path to ensure every digital product drives real business outcomes.</p>
+                </div>
+                <div class="values-grid">
+                    <div class="value-card glass-card reveal">
+                        <div class="value-image">
+                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800"
+                                alt="Scan Phase" loading="lazy">
+                        </div>
+                        <div class="value-content">
+                            <h3>Scan</h3>
+                            <span class="value-sub">Discovery & Strategy</span>
+                            <p>We start by understanding the 'Why'. We scan your market, analyze requirements, and map
+                                out a strategic roadmap aligned with your business goals.</p>
+                        </div>
+                    </div>
+                    <div class="value-card glass-card reveal">
+                        <div class="value-image">
+                            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800"
+                                alt="Build Phase" loading="lazy">
+                        </div>
+                        <div class="value-content">
+                            <h3>Build</h3>
+                            <span class="value-sub">Engineering & Design</span>
+                            <p>We combine robust engineering with creative design to build scalable solutions. Clean
+                                code, engaging visuals, crafted with precision.</p>
+                        </div>
+                    </div>
+                    <div class="value-card glass-card reveal">
+                        <div class="value-image">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800"
+                                alt="Deliver Phase" loading="lazy">
+                        </div>
+                        <div class="value-content">
+                            <h3>Deliver</h3>
+                            <span class="value-sub">Launch & Growth</span>
+                            <p>Delivery is more than deployment. We ensure a seamless launch, referenceable quality, and
+                                continuous support for real-world performance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section section-faq">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">FAQ</span>
+                    <h2 class="section-heading">Frequently Asked Questions</h2>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item glass-card reveal">
+                        <button class="faq-question">
+                            <span>What services does Codebar offer?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We offer a full spectrum of digital services: web development, mobile app development,
+                                e-commerce solutions, digital marketing, SEO, social media marketing, PPC advertising,
+                                strategic branding, lead generation, and content management systems.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item glass-card reveal">
+                        <button class="faq-question">
+                            <span>How is Codebar different from other agencies?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We combine engineering excellence with creative design — all in-house. Our AI-powered
+                                approach, data-driven decision making, and end-to-end partnership model means you get a
+                                single team that handles everything from strategy to deployment.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item glass-card reveal">
+                        <button class="faq-question">
+                            <span>Can startups benefit from Codebar's services?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolutely. We work with startups and enterprises alike. For startups, we offer MVP
+                                development, go-to-market digital strategies, and scalable architectures that grow with
+                                your business.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item glass-card reveal">
+                        <button class="faq-question">
+                            <span>How do you measure campaign success?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We track real business KPIs — revenue, qualified leads, conversion rates, ROAS, and
+                                organic traffic growth. We provide transparent reporting and analytics dashboards so you
+                                always know how your investment is performing.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item glass-card reveal">
+                        <button class="faq-question">
+                            <span>What technologies do you specialize in?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>React, Next.js, Angular, Node.js, React Native, Flutter, Python, AWS, Azure, Google
+                                Cloud, WordPress, Shopify, and more. We pick the right tech for your specific needs.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item glass-card reveal">
+                        <button class="faq-question">
+                            <span>Do you offer ongoing support & maintenance?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes. We offer continuous support, maintenance, and growth packages. We don't just build
+                                and leave — we partner with you for the long term to ensure your digital products keep
+                                performing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section section-contact">
+            <div class="container grid-2col">
+                <div class="reveal-left">
+                    <span class="section-tag">Start a Project</span>
+                    <h2 class="section-heading-xl gradient-white-glow">Let's build something<br>great together.</h2>
+                    <p class="section-text">
+                        Ready to transform your digital presence? Reach out for a consultation, quote, or just to say
+                        hello.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Twitter</a>
+                        <a href="#" class="social-link">LinkedIn</a>
+                        <a href="#" class="social-link">Instagram</a>
+                    </div>
+                </div>
+                <div class="reveal-right contact-details">
+                    <div class="contact-item">
+                        <span class="contact-label">Email</span>
+                        <a href="mailto:support@codebar.in" class="contact-value">support@codebar.in</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Phone</span>
+                        <a href="tel:+916374492504" class="contact-value">+91 63744 92504</a>
+                        <a href="tel:+919940195863" class="contact-value">+91 99401 95863</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Studio</span>
+                        <p class="contact-value">Paruthipattu,<br>Chennai, India</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-inner container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <span class="footer-logo">cod<span class="accent">≡</span>bar</span>
+                        <p class="footer-tagline">Creative Technology Studio.<br>Engineering digital products that
+                            matter.</p>
+                    </div>
+                    <div class="footer-links-group">
+                        <h4>Services</h4>
+                        <a href="#services">Web Development</a>
+                        <a href="#services">App Development</a>
+                        <a href="#services">Digital Marketing</a>
+                        <a href="#services">SEO</a>
+                        <a href="#services">Social Media</a>
+                    </div>
+                    <div class="footer-links-group">
+                        <h4>Company</h4>
+                        <a href="#story">Our Story</a>
+                        <a href="#why-us">Why Us</a>
+                        <a href="#values">Values</a>
+                        <a href="#faq">FAQ</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                    <div class="footer-links-group">
+                        <h4>More</h4>
+                        <a href="#services">Branding</a>
+                        <a href="#services">E-commerce</a>
+                        <a href="#services">PPC</a>
+                        <a href="#services">Lead Generation</a>
+                        <a href="#services">CMS</a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <span>&copy; 2026 Codebar. All rights reserved.</span>
+                    <span>Designed & Built in Chennai</span>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Floating Contact Buttons -->
+    <div class="floating-contact">
+        <a href="https://wa.me/919940195863" target="_blank" rel="noopener" class="floating-btn floating-btn-whatsapp"
+            data-tooltip="Chat on WhatsApp" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
+        </a>
+        <a href="tel:+919940195863" class="floating-btn floating-btn-phone" data-tooltip="Call +91 99401 95863"
+            aria-label="Call us">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+            </svg>
+        </a>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

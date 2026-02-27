@@ -1,0 +1,192 @@
+/* ========================================
+   HERO SECTION — Light Theme (Apple Siri Style)
+   ======================================== */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 120px var(--container-padding) 80px;
+    overflow: hidden;
+    background: var(--bg-secondary);
+}
+
+/* Soft gradient glow behind hero — light pastel version */
+.hero-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(191, 90, 242, 0.08) 0%, rgba(41, 151, 255, 0.06) 40%, transparent 70%);
+    animation: glowDrift 10s ease-in-out infinite;
+    pointer-events: none;
+    filter: blur(80px);
+}
+
+.hero-content {
+    max-width: var(--container-max);
+    width: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-heading {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+    min-height: 2.2em;
+    margin-bottom: 32px;
+    color: var(--text-primary);
+}
+
+/* Typewriter cursor — original blue */
+.cursor {
+    display: inline-block;
+    width: 3px;
+    height: 0.85em;
+    background: #3b82f6;
+    margin-left: 4px;
+    vertical-align: middle;
+    animation: blink 1s infinite;
+}
+
+.hero-sub {
+    font-size: clamp(1rem, 2.5vw, 1.35rem);
+    color: var(--text-secondary);
+    max-width: 650px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.hero-sub.visible {
+    opacity: 1;
+}
+
+/* Hero tags */
+.hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    opacity: 0;
+    transition: opacity 1s ease 0.3s;
+}
+
+.hero-tags.visible {
+    opacity: 1;
+}
+
+.hero-tags span {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    padding: 8px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 100px;
+    background: var(--bg-primary);
+    transition: all var(--transition-fast);
+}
+
+.hero-tags span:hover {
+    color: var(--accent-blue);
+    border-color: var(--accent-blue);
+    background: rgba(0, 113, 227, 0.04);
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    opacity: 0.4;
+    transition: opacity var(--transition-fast);
+}
+
+.scroll-indicator:hover {
+    opacity: 0.8;
+}
+
+.scroll-indicator span {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-tertiary);
+}
+
+.scroll-line {
+    width: 1px;
+    height: 40px;
+    background: var(--text-tertiary);
+    animation: scrollLine 2s ease-in-out infinite;
+}
+
+/* ========================================
+   INTRO / LOGO ANIMATION — Light
+   ======================================== */
+
+#intro-overlay {
+    position: fixed;
+    inset: 0;
+    background: var(--bg-primary);
+    z-index: 200;
+    transition: opacity 0.8s var(--ease-out-expo);
+}
+
+/* Original logo typography: Inter, 700 weight, -0.05em tracking */
+#animating-logo {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 210;
+    pointer-events: none;
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(3rem, 10vw, 6rem);
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    color: var(--text-primary);
+    transition: all 0.8s var(--ease-out-expo);
+    transform-origin: center center;
+}
+
+#animating-logo.logo-moved {
+    position: fixed;
+    top: 20px;
+    left: var(--container-padding);
+    bottom: auto;
+    right: auto;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 1.5rem;
+    pointer-events: auto;
+    opacity: 0;
+}
+
+#main-content {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+@media (min-width: 1200px) {
+    #animating-logo.logo-moved {
+        left: calc(50% - 600px + 48px);
+    }
+}

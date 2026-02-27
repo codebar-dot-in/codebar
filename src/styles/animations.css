@@ -1,0 +1,237 @@
+/* ========================================
+   ANIMATIONS — Keyframes & Scroll Reveal
+   ======================================== */
+
+/* Gradient shift */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Cursor blink */
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Fade in up */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade in left */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Fade in right */
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Float */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Pulse glow */
+@keyframes pulseGlow {
+
+    0%,
+    100% {
+        opacity: 0.4;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: scale(1.1);
+    }
+}
+
+/* Orbit ring */
+@keyframes orbit {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Scroll line */
+@keyframes scrollLine {
+    0% {
+        transform: scaleY(0);
+        transform-origin: top;
+    }
+
+    50% {
+        transform: scaleY(1);
+        transform-origin: top;
+    }
+
+    51% {
+        transform-origin: bottom;
+    }
+
+    100% {
+        transform: scaleY(0);
+        transform-origin: bottom;
+    }
+}
+
+/* Hero glow drift */
+@keyframes glowDrift {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    33% {
+        transform: translate(-45%, -55%) scale(1.1);
+    }
+
+    66% {
+        transform: translate(-55%, -45%) scale(0.95);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* ========================================
+   SCROLL REVEAL CLASSES
+   ======================================== */
+.reveal,
+.reveal-left,
+.reveal-right {
+    opacity: 0;
+    transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+}
+
+.reveal {
+    transform: translateY(40px);
+}
+
+.reveal-left {
+    transform: translateX(-60px);
+}
+
+.reveal-right {
+    transform: translateX(60px);
+}
+
+.reveal.visible,
+.reveal-left.visible,
+.reveal-right.visible {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+/* Stagger children */
+.reveal.visible:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.reveal.visible:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.reveal.visible:nth-child(4) {
+    transition-delay: 0.3s;
+}
+
+.reveal.visible:nth-child(5) {
+    transition-delay: 0.4s;
+}
+
+.reveal.visible:nth-child(6) {
+    transition-delay: 0.5s;
+}
+
+.reveal.visible:nth-child(7) {
+    transition-delay: 0.6s;
+}
+
+.reveal.visible:nth-child(8) {
+    transition-delay: 0.7s;
+}
+
+.reveal.visible:nth-child(9) {
+    transition-delay: 0.8s;
+}
+
+.reveal.visible:nth-child(10) {
+    transition-delay: 0.9s;
+}
+
+/* Bubble float — shared floating card animation */
+@keyframes bubbleFloat {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    25% {
+        transform: translateY(-8px) rotate(0.5deg);
+    }
+
+    50% {
+        transform: translateY(-4px) rotate(-0.3deg);
+    }
+
+    75% {
+        transform: translateY(-10px) rotate(0.2deg);
+    }
+}
