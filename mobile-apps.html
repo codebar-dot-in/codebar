@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile App Development | Codebar</title>
+    <meta name="description"
+        content="Native and cross-platform mobile apps built with React Native and Flutter. Apps people love to use.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/src/styles/base.css">
+    <link rel="stylesheet" href="/src/styles/animations.css">
+    <link rel="stylesheet" href="/src/styles/nav.css">
+    <link rel="stylesheet" href="/src/styles/service-details.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav id="main-nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">cod<span class="accent">≡</span>bar</a>
+            <div class="nav-links">
+                <a href="index.html#story">Story</a>
+                <div class="nav-dropdown-wrapper">
+                    <a href="index.html#services" class="nav-dropdown-toggle">Services
+                        <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                    <div class="nav-dropdown">
+                        <a href="web-development.html">Website Development</a>
+                        <a href="mobile-apps.html">Mobile Apps</a>
+                        <a href="digital-marketing.html">Digital Marketing</a>
+                        <a href="seo-engineering.html">SEO Engineering</a>
+                    </div>
+                </div>
+                <a href="index.html#why-us">Why Us</a>
+                <a href="index.html#values">Values</a>
+                <a href="index.html#faq">FAQ</a>
+                <a href="index.html#contact" class="nav-cta">Contact</a>
+            </div>
+            <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu">
+        <button id="mobile-menu-close" class="mobile-menu-close" aria-label="Close menu">&times;</button>
+        <nav class="mobile-menu-nav">
+            <a href="index.html#story" class="mobile-link">Story</a>
+            <div class="mobile-dropdown-wrapper">
+                <button class="mobile-link mobile-dropdown-toggle">Services
+                    <svg width="14" height="8" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <div class="mobile-dropdown">
+                    <a href="web-development.html" class="mobile-sublink">Website Development</a>
+                    <a href="mobile-apps.html" class="mobile-sublink">Mobile Apps</a>
+                    <a href="digital-marketing.html" class="mobile-sublink">Digital Marketing</a>
+                    <a href="seo-engineering.html" class="mobile-sublink">SEO Engineering</a>
+                </div>
+            </div>
+            <a href="index.html#why-us" class="mobile-link">Why Us</a>
+            <a href="index.html#values" class="mobile-link">Values</a>
+            <a href="index.html#faq" class="mobile-link">FAQ</a>
+            <a href="index.html#contact" class="mobile-link">Contact</a>
+        </nav>
+    </div>
+
+    <!-- Page Content -->
+    <main>
+        <!-- Hero Section -->
+        <header class="service-hero">
+            <div class="service-hero-bg"
+                style="background-image: linear-gradient(135deg, rgba(29,29,31,0.9), rgba(29,29,31,0.9)), url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=2070');">
+            </div>
+            <div class="container relative">
+                <div class="service-hero-content reveal">
+                    <span class="service-hero-tag gradient-text">Service 02</span>
+                    <h1 class="service-hero-title">Apps people love.</h1>
+                    <p class="service-hero-desc">
+                        Native and cross-platform apps for iOS and Android. We build fluid, fast, and feature-rich
+                        mobile experiences that keep users coming back.
+                    </p>
+                </div>
+            </div>
+        </header>
+
+        <!-- What & Why Section -->
+        <section class="service-section">
+            <div class="container">
+                <div class="what-why-grid">
+                    <!-- What -->
+                    <div class="what-why-card reveal-left">
+                        <h3 class="gradient-text">What is it?</h3>
+                        <p>
+                            We engineer mobile applications that live in your users' pockets. Using modern frameworks
+                            like
+                            <strong>React Native</strong> and <strong>Flutter</strong>, or native Swift and Kotlin,
+                            we create apps that run flawlessly across all devices. From complex e-commerce portals
+                            to real-time tracking apps, we handle the entire lifecycle—from the first sketch to
+                            App Store deployment constraints.
+                        </p>
+                    </div>
+                    <!-- Why -->
+                    <div class="what-why-card reveal-right">
+                        <h3 class="gradient-text">Why do you need it?</h3>
+                        <p>
+                            Mobile traffic accounts for over 55% of all web traffic worldwide. But users don't just want
+                            mobile websites; they want the speed, offline capabilities, and push notifications that only
+                            a dedicated app can provide. A well-built app sky-rockets customer retention, builds brand
+                            loyalty, and opens up entirely new revenue streams through in-app purchases and
+                            subscriptions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Metrics & Charts Section -->
+        <section class="service-section service-section-dark">
+            <div class="container">
+                <h2 class="service-section-title reveal">Built for retention.</h2>
+                <div class="metrics-container">
+
+                    <!-- Circular Progress (Crash Free) -->
+                    <div class="metric-card reveal-left">
+                        <h3 class="metric-title">Crash-Free Users</h3>
+                        <div class="perf-ring-wrapper">
+                            <div class="perf-ring"
+                                style="--score: 99.8; background: conic-gradient(var(--accent-blue) calc(99.8 * 1%), var(--bg-secondary) 0);">
+                                <span class="perf-score" style="color: var(--accent-blue);">99.8<span
+                                        style="font-size: 1.5rem">%</span></span>
+                            </div>
+                        </div>
+                        <p style="margin-top: 24px; color: var(--text-secondary); font-size: 0.95rem;">
+                            Our rigorous QA and automated testing pipelines ensure near-perfect stability in production.
+                        </p>
+                    </div>
+
+                    <!-- Bar Chart (Retention) -->
+                    <div class="metric-card reveal-right">
+                        <h3 class="metric-title">30-Day Retention</h3>
+                        <div class="bar-chart">
+                            <div class="bar-col">
+                                <div class="bar" style="height: 40px; background: var(--border-color);"></div>
+                                <span class="bar-label">Industry (4%)</span>
+                            </div>
+                            <div class="bar-col">
+                                <div class="bar" style="height: 120px; background: var(--gradient-cool);"></div>
+                                <span class="bar-label gradient-text"
+                                    style="background: var(--gradient-cool); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Codebar
+                                    (24%)</span>
+                            </div>
+                        </div>
+                        <p style="margin-top: 24px; color: var(--text-secondary); font-size: 0.95rem;">
+                            Intuitive UX and strategic push notifications keep your users engaged.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack Section -->
+        <section class="service-section">
+            <div class="container">
+                <h2 class="service-section-title reveal">How we do it.</h2>
+                <p class="section-text reveal" style="text-align: center; max-width: 600px; margin: 0 auto;">
+                    We write clean, modular code using industry-leading mobile frameworks to ensure your app lives
+                    forever on both operating systems.
+                </p>
+
+                <div class="tech-stack-grid reveal">
+                    <div class="tech-item">
+                        <svg viewBox="0 0 24 24" fill="var(--accent-blue)" width="48" height="48"
+                            style="margin-bottom: 16px;">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <h4>React Native</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-tertiary); margin-top: 8px;">Write once, run
+                            anywhere.</p>
+                    </div>
+
+                    <div class="tech-item">
+                        <svg viewBox="0 0 24 24" fill="var(--accent-green)" width="48" height="48"
+                            style="margin-bottom: 16px;">
+                            <path d="M5 12l5 5L20 7" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                stroke-linejoin="round" fill="none" />
+                        </svg>
+                        <h4>Flutter</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-tertiary); margin-top: 8px;">Beautiful native UI
+                            components.</p>
+                    </div>
+
+                    <div class="tech-item">
+                        <svg viewBox="0 0 24 24" fill="var(--text-primary)" width="48" height="48"
+                            style="margin-bottom: 16px;">
+                            <rect x="5" y="2" width="14" height="20" rx="2" stroke="currentColor" stroke-width="2"
+                                fill="none" />
+                            <path d="M12 18h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                        <h4>Swift / iOS</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-tertiary); margin-top: 8px;">For Apple ecosystem
+                            power.</p>
+                    </div>
+
+                    <div class="tech-item">
+                        <svg viewBox="0 0 24 24" fill="var(--accent-green)" width="48" height="48"
+                            style="margin-bottom: 16px;">
+                            <rect x="5" y="2" width="14" height="20" rx="2" stroke="currentColor" stroke-width="2"
+                                fill="none" />
+                            <path d="M9 2l3 3 3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" fill="none" />
+                        </svg>
+                        <h4>Kotlin / Android</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-tertiary); margin-top: 8px;">For raw Android
+                            performance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container reveal">
+                <h2 class="cta-title">Ready to launch your app?</h2>
+                <a href="index.html#contact" class="btn-primary">Talk to our engineers</a>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

@@ -31,7 +31,27 @@ function initMobileMenu() {
 
     if (menuBtn) menuBtn.addEventListener('click', toggleMenu);
     if (closeBtn) closeBtn.addEventListener('click', toggleMenu);
-    mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+
+    // Regular links close the menu
+    document.querySelectorAll('.mobile-link:not(.mobile-dropdown-toggle)').forEach(link => {
+        link.addEventListener('click', toggleMenu);
+    });
+
+    // Sublinks close the menu
+    document.querySelectorAll('.mobile-sublink').forEach(link => {
+        link.addEventListener('click', toggleMenu);
+    });
+
+    // Dropdown toggle expands accordion
+    const dropdownToggle = document.querySelector('.mobile-dropdown-toggle');
+    const dropdown = document.querySelector('.mobile-dropdown');
+
+    if (dropdownToggle && dropdown) {
+        dropdownToggle.addEventListener('click', () => {
+            dropdownToggle.classList.toggle('active');
+            dropdown.classList.toggle('open');
+        });
+    }
 }
 
 // ========================================

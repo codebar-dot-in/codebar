@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Engineering | Codebar</title>
+    <meta name="description"
+        content="Technical SEO, content strategy, and organic growth engineering to dominate search engine rankings.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/src/styles/base.css">
+    <link rel="stylesheet" href="/src/styles/animations.css">
+    <link rel="stylesheet" href="/src/styles/nav.css">
+    <link rel="stylesheet" href="/src/styles/service-details.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav id="main-nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">cod<span class="accent">≡</span>bar</a>
+            <div class="nav-links">
+                <a href="index.html#story">Story</a>
+                <div class="nav-dropdown-wrapper">
+                    <a href="index.html#services" class="nav-dropdown-toggle">Services
+                        <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                    <div class="nav-dropdown">
+                        <a href="web-development.html">Website Development</a>
+                        <a href="mobile-apps.html">Mobile Apps</a>
+                        <a href="digital-marketing.html">Digital Marketing</a>
+                        <a href="seo-engineering.html">SEO Engineering</a>
+                    </div>
+                </div>
+                <a href="index.html#why-us">Why Us</a>
+                <a href="index.html#values">Values</a>
+                <a href="index.html#faq">FAQ</a>
+                <a href="index.html#contact" class="nav-cta">Contact</a>
+            </div>
+            <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu">
+        <button id="mobile-menu-close" class="mobile-menu-close" aria-label="Close menu">&times;</button>
+        <nav class="mobile-menu-nav">
+            <a href="index.html#story" class="mobile-link">Story</a>
+            <div class="mobile-dropdown-wrapper">
+                <button class="mobile-link mobile-dropdown-toggle">Services
+                    <svg width="14" height="8" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <div class="mobile-dropdown">
+                    <a href="web-development.html" class="mobile-sublink">Website Development</a>
+                    <a href="mobile-apps.html" class="mobile-sublink">Mobile Apps</a>
+                    <a href="digital-marketing.html" class="mobile-sublink">Digital Marketing</a>
+                    <a href="seo-engineering.html" class="mobile-sublink">SEO Engineering</a>
+                </div>
+            </div>
+            <a href="index.html#why-us" class="mobile-link">Why Us</a>
+            <a href="index.html#values" class="mobile-link">Values</a>
+            <a href="index.html#faq" class="mobile-link">FAQ</a>
+            <a href="index.html#contact" class="mobile-link">Contact</a>
+        </nav>
+    </div>
+
+    <!-- Page Content -->
+    <main>
+        <!-- Hero Section -->
+        <header class="service-hero">
+            <div class="service-hero-bg"
+                style="background-image: linear-gradient(135deg, rgba(29,29,31,0.85), rgba(29,29,31,0.95)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2070');">
+            </div>
+            <div class="container relative">
+                <div class="service-hero-content reveal">
+                    <span class="service-hero-tag gradient-text"
+                        style="background: var(--gradient-green); -webkit-background-clip: text;">Service 04</span>
+                    <h1 class="service-hero-title">Dominate search.</h1>
+                    <p class="service-hero-desc">
+                        Engineering your organic growth. We treat SEO as a hard science—optimizing code, structure,
+                        and content to secure the top spots on Google.
+                    </p>
+                </div>
+            </div>
+        </header>
+
+        <!-- What & Why Section -->
+        <section class="service-section">
+            <div class="container">
+                <div class="what-why-grid">
+                    <!-- What -->
+                    <div class="what-why-card reveal-left">
+                        <h3 class="gradient-text"
+                            style="background: var(--gradient-green); -webkit-background-clip: text;">What is it?</h3>
+                        <p>
+                            SEO (Search Engine Optimization) is no longer just about stuffing keywords into blog posts.
+                            It's a highly technical discipline. We focus on <strong>Technical SEO</strong> (site speed,
+                            schema markup, crawlability),
+                            <strong>On-Page Strategy</strong> (intent matching, semantic HTML), and <strong>Off-Page
+                                Authority</strong>
+                            to signal absolute relevance and trust to search engines.
+                        </p>
+                    </div>
+                    <!-- Why -->
+                    <div class="what-why-card reveal-right">
+                        <h3 class="gradient-text"
+                            style="background: var(--gradient-green); -webkit-background-clip: text;">Why do you need
+                            it?</h3>
+                        <p>
+                            Over 90% of online experiences begin with a search engine, and 75% of users never scroll
+                            past the first page.
+                            If you aren't ranking, you are invisible. Unlike paid ads that stop working the moment you
+                            stop paying,
+                            organic SEO builds a compounding asset. It drives high-intent, free traffic to your website
+                            24/7, yielding
+                            the highest long-term ROI of any marketing channel.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Metrics & Charts Section -->
+        <section class="service-section service-section-dark">
+            <div class="container">
+                <h2 class="service-section-title reveal">Compound growth.</h2>
+                <div class="metrics-container">
+
+                    <!-- Circular Progress (SEO Health) -->
+                    <div class="metric-card reveal-left">
+                        <h3 class="metric-title">Technical Health Score</h3>
+                        <div class="perf-ring-wrapper">
+                            <div class="perf-ring"
+                                style="--score: 98; background: conic-gradient(var(--accent-green) calc(98 * 1%), var(--bg-secondary) 0);">
+                                <span class="perf-score" style="color: var(--accent-green);">98</span>
+                            </div>
+                        </div>
+                        <p style="margin-top: 24px; color: var(--text-secondary); font-size: 0.95rem;">
+                            We fix the foundational technical errors that hold 90% of websites back.
+                        </p>
+                    </div>
+
+                    <!-- Bar Chart (Organic Traffic Growth) -->
+                    <div class="metric-card reveal-right">
+                        <h3 class="metric-title">YOY Organic Traffic Growth</h3>
+                        <div class="bar-chart">
+                            <div class="bar-col">
+                                <div class="bar" style="height: 30px; background: var(--border-color);"></div>
+                                <span class="bar-label">Month 1</span>
+                            </div>
+                            <div class="bar-col">
+                                <div class="bar" style="height: 60px; background: var(--border-color);"></div>
+                                <span class="bar-label">Month 3</span>
+                            </div>
+                            <div class="bar-col">
+                                <div class="bar" style="height: 180px; background: #30d158;"></div>
+                                <span class="bar-label" style="color: #30d158;">Month 12</span>
+                            </div>
+                        </div>
+                        <p style="margin-top: 24px; color: var(--text-secondary); font-size: 0.95rem;">
+                            SEO is a marathon. Our clients see compounding traffic growth as domain authority builds.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack Section -->
+        <section class="service-section">
+            <div class="container">
+                <h2 class="service-section-title reveal">Our tools.</h2>
+                <p class="section-text reveal" style="text-align: center; max-width: 600px; margin: 0 auto;">
+                    We use enterprise SEO software to reverse-engineer search algorithms and outrank your competitors.
+                </p>
+
+                <div class="tech-stack-grid reveal">
+                    <div class="tech-item">
+                        <svg viewBox="0 0 24 24" fill="#E67E22" width="48" height="48" style="margin-bottom: 16px;">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                                stroke="currentColor" stroke-width="1" />
+                        </svg>
+                        <h4>Ahrefs / SEMrush</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-tertiary); margin-top: 8px;">Competitor & gap
+                            analysis.</p>
+                    </div>
+
+                    <div class="tech-item">
+                        <svg viewBox="0 0 24 24" fill="#4285F4" width="48" height="48" style="margin-bottom: 16px;">
+                            <path d="M12 2L2 22h20L12 2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"
+                                fill="none" />
+                            <path d="M12 10v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            <circle cx="12" cy="19" r="1" />
+                        </svg>
+                        <h4>Search Console</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-tertiary); margin-top: 8px;">Direct Google
+                            indexing data.</p>
+                    </div>
+
+                    <div class="tech-item">
+                        <svg viewBox="0 0 24 24" fill="#0F9D58" width="48" height="48" style="margin-bottom: 16px;">
+                            <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"
+                                fill="none" />
+                            <path d="M3 9h18M9 21V9" stroke="currentColor" stroke-width="2" />
+                        </svg>
+                        <h4>Schema Org</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-tertiary); margin-top: 8px;">Structured data
+                            markup.</p>
+                    </div>
+
+                    <div class="tech-item">
+                        <svg viewBox="0 0 24 24" fill="#F4B400" width="48" height="48" style="margin-bottom: 16px;">
+                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                        <h4>Core Web Vitals</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-tertiary); margin-top: 8px;">UX and speed
+                            optimization.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container reveal">
+                <h2 class="cta-title">Ready to own the front page?</h2>
+                <a href="index.html#contact" class="btn-primary">Request an SEO Audit</a>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
