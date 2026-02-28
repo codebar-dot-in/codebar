@@ -19,7 +19,10 @@ export function initTypewriter() {
         if (index < logoText.length) {
             const char = logoText[index];
             // Original styling: "≡" and "bar" (index >= 3) in blue-600 (#2563eb)
-            if (index >= 3) {
+            // Add space around ≡ for breathing room
+            if (char === '≡') {
+                logoTypewriter.innerHTML += `<span style="color: #2563eb; margin-left: 14px; letter-spacing: 0.05em">${char}</span>`;
+            } else if (index > 3) {
                 logoTypewriter.innerHTML += `<span style="color: #2563eb">${char}</span>`;
             } else {
                 logoTypewriter.innerHTML += char;
@@ -54,6 +57,28 @@ export function initTypewriter() {
         }
     }
 
-    // Start the sequence
+    // If URL has a hash (e.g. from service page CTA), skip the intro animation
+    if (window.location.hash) {
+        // Instantly set up the final state without animation
+        logoTypewriter.innerHTML = 'cod<span style="color: #2563eb; margin-left: 14px; letter-spacing: 0.05em">≡</span><span style="color: #2563eb">b</span><span style="color: #2563eb">a</span><span style="color: #2563eb">r</span>';
+        if (animatingLogo) animatingLogo.classList.add('logo-moved');
+        if (introOverlay) {
+            introOverlay.style.opacity = '0';
+            introOverlay.style.display = 'none';
+        }
+        if (mainContent) mainContent.style.opacity = '1';
+        // Show hero text instantly
+        heroElement.innerHTML = heroText.replace(/\n/g, '<br>') + '<span class="cursor"></span>';
+        if (subtextElement) subtextElement.classList.add('visible');
+        if (heroTags) heroTags.classList.add('visible');
+        // Scroll to the hash target after a brief paint
+        setTimeout(() => {
+            const target = document.querySelector(window.location.hash);
+            if (target) target.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+        return;
+    }
+
+    // Start the sequence (normal first visit)
     setTimeout(typeLogo, 400);
 }

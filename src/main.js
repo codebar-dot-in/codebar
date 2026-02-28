@@ -7,6 +7,7 @@ import './styles/nav.css';
 import './styles/hero.css';
 import './styles/sections.css';
 import './styles/services.css';
+import './styles/service-page.css';
 
 // Modules
 import { initTypewriter } from './utils/typewriter.js';
@@ -14,6 +15,7 @@ import { initCounters } from './utils/counter.js';
 import { initScrollReveal, initNavScroll } from './utils/scroll-reveal.js';
 import { initServiceAnimations } from './utils/service-animations.js';
 import { initHeroWave } from './utils/hero-wave.js';
+import { initCleanNav } from './utils/clean-nav.js';
 
 // ========================================
 // Mobile Menu
@@ -81,6 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
     initFAQ();
     initNavScroll();
+    initCleanNav();
 
     // Delay scroll reveals slightly so intro animation plays first
     setTimeout(() => {

@@ -159,7 +159,7 @@
     z-index: 210;
     pointer-events: none;
     font-family: 'Inter', sans-serif;
-    font-size: clamp(3rem, 10vw, 6rem);
+    font-size: clamp(3.5rem, 12vw, 7rem);
     font-weight: 700;
     letter-spacing: -0.05em;
     color: var(--text-primary);
@@ -175,7 +175,7 @@
     right: auto;
     justify-content: flex-start;
     align-items: flex-start;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     pointer-events: auto;
     opacity: 0;
 }
