@@ -7,25 +7,31 @@
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://codebar.in/web-development.html</loc>
+        <loc>https://codebar.in/web-development/</loc>
         <lastmod>2026-02-28</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://codebar.in/mobile-apps.html</loc>
+        <loc>https://codebar.in/mobile-apps/</loc>
         <lastmod>2026-02-28</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://codebar.in/digital-marketing.html</loc>
+        <loc>https://codebar.in/digital-marketing/</loc>
         <lastmod>2026-02-28</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://codebar.in/seo-engineering.html</loc>
+        <loc>https://codebar.in/seo-engineering/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://codebar.in/enquiry/</loc>
         <lastmod>2026-02-28</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>

@@ -11,6 +11,7 @@ export default defineConfig({
                 'digital-marketing': resolve(__dirname, 'digital-marketing/index.html'),
                 'seo-engineering': resolve(__dirname, 'seo-engineering/index.html'),
                 enquiry: resolve(__dirname, 'enquiry/index.html'),
+                404: resolve(__dirname, '404.html'),
             },
         },
     },
