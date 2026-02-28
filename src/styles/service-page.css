@@ -1003,3 +1003,49 @@ a.sp-enquiry-contact-value:hover {
         font-size: clamp(2.5rem, 10vw, 4rem);
     }
 }
+
+/* ── Enquiry Success Message ────────── */
+.enquiry-success-message {
+    background: rgba(48, 209, 88, 0.05);
+    border: 1px solid rgba(48, 209, 88, 0.15);
+    border-radius: 16px;
+    padding: 32px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s var(--ease-out-expo);
+}
+
+.enquiry-success-message.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.enquiry-success-message .success-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(48, 209, 88, 0.15);
+    color: #30d158;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 20px;
+}
+
+.enquiry-success-message h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.enquiry-success-message p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    max-width: 400px;
+    margin: 0 auto;
+}

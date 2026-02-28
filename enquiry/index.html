@@ -176,11 +176,7 @@
                         </div>
                     </div>
                 </div>
-                <form class="sp-enquiry-form sp-reveal" id="enquiry-form"
-                    action="https://formsubmit.co/support@codebar.in" method="POST">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_subject" value="New Enquiry from Codebar Website">
+                <form class="sp-enquiry-form sp-reveal" id="enquiry-form">
                     <div class="sp-form-group">
                         <label class="sp-form-label" for="enq-name">Full Name *</label>
                         <input type="text" id="enq-name" name="name" class="sp-form-input" placeholder="John Doe"
@@ -319,8 +315,10 @@
     <script type="module">
         import '/src/main.js';
         import { initServiceReveal } from '/src/utils/service-bg.js';
+        import { initEnquiryForm } from '/src/utils/api-form.js';
         document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => initServiceReveal(), 300);
+            initEnquiryForm();
         });
     </script>
 </body>
