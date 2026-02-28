@@ -22,6 +22,15 @@ export function initCleanNav() {
 
         if (!sectionId) return;
 
+        // Check if the target exists on the current page before preventing default navigation
+        let target = null;
+        if (sectionId !== '#top') {
+            target = document.querySelector(sectionId);
+            // If the element doesn't exist on this page, do nothing here.
+            // The browser will natively navigate to the URL (e.g. to the homepage).
+            if (!target) return;
+        }
+
         e.preventDefault();
         e.stopPropagation();
 
@@ -29,8 +38,6 @@ export function initCleanNav() {
         if (sectionId === '#top') {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         } else {
-            const target = document.querySelector(sectionId);
-            if (!target) return;
             target.scrollIntoView({ behavior: 'smooth' });
         }
 
