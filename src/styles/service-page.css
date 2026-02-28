@@ -67,7 +67,7 @@
 
 .sp-hero-title {
     font-family: 'Inter', sans-serif;
-    font-size: clamp(3rem, 8vw, 7rem);
+    font-size: clamp(3rem, 7vw, 7rem);
     font-weight: 800;
     line-height: 1.05;
     letter-spacing: -0.04em;
@@ -979,7 +979,7 @@ a.sp-enquiry-contact-value:hover {
     }
 
     .sp-hero-title {
-        font-size: clamp(2.5rem, 10vw, 4rem);
+        font-size: clamp(2.5rem, 8vw, 4rem);
     }
 
     .sp-cap-num {
