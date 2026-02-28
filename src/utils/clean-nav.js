@@ -22,14 +22,17 @@ export function initCleanNav() {
 
         if (!sectionId) return;
 
-        const target = document.querySelector(sectionId);
-        if (!target) return;
-
         e.preventDefault();
         e.stopPropagation();
 
-        // Smooth scroll to the section
-        target.scrollIntoView({ behavior: 'smooth' });
+        // Special case: #top scrolls to the very top of the page
+        if (sectionId === '#top') {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+            const target = document.querySelector(sectionId);
+            if (!target) return;
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
 
         // Clean up the URL — remove the hash fragment completely
         history.replaceState(null, '', window.location.pathname);

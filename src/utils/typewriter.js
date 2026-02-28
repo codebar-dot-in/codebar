@@ -21,7 +21,7 @@ export function initTypewriter() {
             // Original styling: "≡" and "bar" (index >= 3) in blue-600 (#2563eb)
             // Add space around ≡ for breathing room
             if (char === '≡') {
-                logoTypewriter.innerHTML += `<span style="color: #2563eb; margin-left: 14px; letter-spacing: 0.05em">${char}</span>`;
+                logoTypewriter.innerHTML += `<span style="color: #2563eb; margin-left: 5px; letter-spacing: 0.05em">${char}</span>`;
             } else if (index > 3) {
                 logoTypewriter.innerHTML += `<span style="color: #2563eb">${char}</span>`;
             } else {
