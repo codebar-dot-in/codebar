@@ -117,7 +117,7 @@
 
 /* ── Shared Section Base ────────────── */
 .sp-section {
-    padding: clamp(80px, 10vw, 140px) 0;
+    padding: clamp(60px, 8vw, 100px) 0;
     position: relative;
     overflow: hidden;
 }
@@ -144,7 +144,7 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.2em;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     background: var(--gradient-siri);
     background-size: 200% 200%;
     -webkit-background-clip: text;
@@ -168,7 +168,8 @@
     font-weight: 800;
     letter-spacing: -0.03em;
     line-height: 1.1;
-    margin-bottom: 24px;
+    text-wrap: balance;
+    margin-bottom: 20px;
     color: var(--text-primary);
 }
 
@@ -193,9 +194,10 @@
 .sp-section-desc {
     font-family: 'Inter', sans-serif;
     font-size: clamp(1rem, 1.8vw, 1.15rem);
-    line-height: 1.8;
+    line-height: 1.6;
     max-width: 650px;
-    margin-bottom: 56px;
+    text-wrap: pretty;
+    margin-bottom: 40px;
     color: var(--text-secondary);
 }
 
@@ -231,7 +233,7 @@
     background: var(--bg-secondary);
     border: 1px solid var(--border-light);
     border-radius: 20px;
-    padding: 36px 28px;
+    padding: 24px 28px;
     overflow: hidden;
     transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }

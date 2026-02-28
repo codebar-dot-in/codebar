@@ -24,18 +24,20 @@
     font-weight: 800;
     letter-spacing: -0.03em;
     line-height: 1.1;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
+    text-wrap: balance;
     color: var(--text-primary);
 }
 
 /* Large gradient headings — Apple Siri style */
 .section-heading-xl {
     font-family: 'Inter', sans-serif;
-    font-size: clamp(3rem, 8vw, 7rem);
+    font-size: clamp(3rem, 8vw, 6rem);
     font-weight: 800;
     letter-spacing: -0.04em;
     line-height: 1.05;
-    margin-bottom: 32px;
+    margin-bottom: 24px;
+    text-wrap: balance;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -250,7 +252,7 @@
 }
 
 .service-card {
-    padding: 36px 28px;
+    padding: 24px 28px;
     position: relative;
     overflow: hidden;
     background: var(--bg-secondary);
@@ -335,7 +337,7 @@
 }
 
 .why-card {
-    padding: 40px 32px;
+    padding: 28px 32px;
     text-align: center;
     position: relative;
     overflow: hidden;
