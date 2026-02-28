@@ -22,8 +22,8 @@ export function initTypewriter() {
             // Add space around ≡ for breathing room
             if (char === '≡') {
                 logoTypewriter.innerHTML += `<span style="color: #2563eb; margin-left: 5px; letter-spacing: 0.05em">${char}</span>`;
-            } else if (index > 3) {
-                logoTypewriter.innerHTML += `<span style="color: #2563eb">${char}</span>`;
+                // } else if (index > 3) {
+                //     logoTypewriter.innerHTML += `<span style="color: #2563eb">${char}</span>`;
             } else {
                 logoTypewriter.innerHTML += char;
             }

@@ -18,7 +18,7 @@
   
   <!-- Logo -->
   <text x="32" y="45" dy=".35em" style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 26px; letter-spacing: -0.05em;">
-    <tspan fill="#000000">cod≡</tspan><tspan fill="#2563eb">bar</tspan>
+    <tspan fill="#000000">cod</tspan><tspan fill="#2563eb">≡</tspan><tspan fill="#000000">bar</tspan>
   </text>
   
   <!-- Personnel -->

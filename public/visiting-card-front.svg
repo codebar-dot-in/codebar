@@ -33,7 +33,7 @@
 
   <!-- Logo -->
   <text x="210" y="105" dy=".35em" style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: 51px; letter-spacing: -0.05em; text-anchor: middle;">
-    <tspan fill="#000000">cod≡</tspan><tspan fill="#2563eb">bar</tspan>
+    <tspan fill="#000000">cod</tspan><tspan fill="#2563eb">≡</tspan><tspan fill="#000000">bar</tspan>
   </text>
   
   <!-- Divider -->

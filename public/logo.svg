@@ -17,6 +17,6 @@
   <!-- <rect width="100%" height="100%" fill="white" /> -->
 
   <text x="50%" y="50%" class="logo-text">
-    <tspan fill="#000000">cod≡</tspan><tspan fill="#2563eb">bar</tspan>
+    <tspan fill="#000000">cod</tspan><tspan fill="#2563eb">≡</tspan><tspan fill="#000000">bar</tspan>
   </text>
 </svg>
