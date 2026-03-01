@@ -181,7 +181,7 @@
     right: auto;
     justify-content: flex-start;
     align-items: flex-start;
-    pointer-events: auto;
+    pointer-events: none;
     opacity: 0;
 }
 

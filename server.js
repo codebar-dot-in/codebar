@@ -38,28 +38,7 @@ const generateSupportEmailHTML = (data) => {
     return `
         <div style="font-family: Arial, sans-serif; color: #333; max-width: 600px; margin: 0 auto; border: 1px solid #eee; border-radius: 8px; overflow: hidden;">
             <div style="background-color: #ffffff; padding: 20px; text-align: center; border-bottom: 1px solid #eee;">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100" style="display: block; margin: 0 auto;">
-                  <defs>
-                    <style>
-                      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
-                      .logo-text {
-                        font-family: 'Inter', sans-serif;
-                        font-weight: 700;
-                        font-size: 80px;
-                        letter-spacing: -0.05em;
-                        dominant-baseline: middle;
-                        text-anchor: middle;
-                      }
-                    </style>
-                  </defs>
-                  
-                  <!-- Background rect for visibility if needed, remove fill for transparency -->
-                  <!-- <rect width="100%" height="100%" fill="white" /> -->
-                
-                  <text x="50%" y="50%" class="logo-text">
-                    <tspan fill="#000000">cod≡</tspan><tspan fill="#2563eb">bar</tspan>
-                  </text>
-                </svg>
+                <img src="https://codebar.in/logo.png" alt="Codebar" style="display: block; margin: 0 auto; height: 60px; width: auto;">
             </div>
             <div style="padding: 30px;">
                 <p><strong>Name:</strong> ${data.name}</p>
@@ -86,28 +65,7 @@ const generateUserAutoReplyHTML = (data) => {
     return `
         <div style="font-family: Arial, sans-serif; color: #333; max-width: 600px; margin: 0 auto; border: 1px solid #eee; border-radius: 8px; overflow: hidden;">
             <div style="background-color: #ffffff; padding: 30px 20px; text-align: center; border-bottom: 1px solid #eee;">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100" style="display: block; margin: 0 auto;">
-                  <defs>
-                    <style>
-                      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
-                      .logo-text {
-                        font-family: 'Inter', sans-serif;
-                        font-weight: 700;
-                        font-size: 80px;
-                        letter-spacing: -0.05em;
-                        dominant-baseline: middle;
-                        text-anchor: middle;
-                      }
-                    </style>
-                  </defs>
-                  
-                  <!-- Background rect for visibility if needed, remove fill for transparency -->
-                  <!-- <rect width="100%" height="100%" fill="white" /> -->
-                
-                  <text x="50%" y="50%" class="logo-text">
-                    <tspan fill="#000000">cod≡</tspan><tspan fill="#2563eb">bar</tspan>
-                  </text>
-                </svg>
+                <img src="https://codebar.in/logo.png" alt="Codebar" style="display: block; margin: 0 auto; height: 60px; width: auto;">
             </div>
             <div style="padding: 30px;">
                 <h3 style="margin-top: 0;">Hi ${data.name},</h3>
