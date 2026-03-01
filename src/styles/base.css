@@ -35,7 +35,7 @@
     --font-body: 'Inter', sans-serif;
 
     /* Spacing */
-    --section-padding: clamp(80px, 12vw, 160px);
+    --section-padding: clamp(80px, 12vw, 115px);
     --container-max: 1200px;
     --container-padding: clamp(20px, 5vw, 48px);
 

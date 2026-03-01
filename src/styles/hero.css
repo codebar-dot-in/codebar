@@ -181,9 +181,18 @@
     right: auto;
     justify-content: flex-start;
     align-items: flex-start;
-    font-size: 1.8rem;
     pointer-events: auto;
     opacity: 0;
+}
+
+#animating-logo .logo-img {
+    height: clamp(60px, 15vw, 140px);
+    width: auto;
+    transition: all 0.8s var(--ease-out-expo);
+}
+
+#animating-logo.logo-moved .logo-img {
+    height: 36px;
 }
 
 #main-content {
